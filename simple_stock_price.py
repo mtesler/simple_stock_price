@@ -8,3 +8,6 @@ st.write("""
 Shown are the stock closing price and volume of Google! 
 
 """)
+
+# define the ticker symbol
+ticker_symbol = 'GOOGL'
