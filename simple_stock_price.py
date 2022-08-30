@@ -10,7 +10,8 @@ Shown are the stock closing price and volume of Google!
 """)
 
 # define the ticker symbol
-ticker_symbol = 'GOOGL'
+ticker_symbol = st.text_input(
+    'Selected company: ', 'AAPL')
 
 # get data on this ticker
 ticker_data = yf.Ticker(ticker_symbol)
