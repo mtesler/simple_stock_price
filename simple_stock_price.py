@@ -17,8 +17,14 @@ ticker_symbol = st.text_input(
 ticker_data = yf.Ticker(ticker_symbol)
 
 # get the historical prices for this ticker
+start_date = st.date_input(
+    'Please select a start date')
+
+end_date = st.date_input(
+    'Please select a end date')
+
 ticker_df = ticker_data.history(
-    period='1d', start='2020-01-01', end='2022-08-29')
+    period='1d', start=start_date, end=end_date)
 
 # create line charts
 st.line_chart(ticker_df.Close)
