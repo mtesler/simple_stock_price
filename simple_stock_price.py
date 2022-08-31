@@ -9,7 +9,7 @@ st.markdown("<h4 style='text-align: center; color: black;'>Shown are the stock c
 
 # define the ticker symbol
 ticker_symbol = st.text_input(
-    'Selected company: ', 'AAPL')
+    'Please type a company stock ticker: ', 'AAPL')
 
 # get data on this ticker
 ticker_data = yf.Ticker(ticker_symbol)
