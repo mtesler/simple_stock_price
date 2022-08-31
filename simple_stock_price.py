@@ -25,5 +25,12 @@ ticker_df = ticker_data.history(
     period='1d', start=start_date, end=end_date)
 
 # create line charts
+st.write("""
+#### Closing price
+""")
 st.line_chart(ticker_df.Close)
+
+st.write("""
+#### Volume
+""")
 st.line_chart(ticker_df.Volume)
