@@ -2,30 +2,35 @@ import yfinance as yf
 import streamlit as st
 import pandas as pd
 
-st.write("""
-# Simple Stock Price App
+st.markdown("<h1 style='text-align: center; color: black;'>Simple Stock Price App</h1>",
+            unsafe_allow_html=True)
 
-Shown are the stock closing price and volume of selected company!
-
-""")
+st.markdown("<h4 style='text-align: center; color: black;'>Shown are the stock closing price and volume of selected company!</h2>", unsafe_allow_html=True)
 
 # define the ticker symbol
 ticker_symbol = st.text_input(
-    'Selected company: ', 'AAPL')
+    'Please type a company stock ticker: ', 'AAPL')
 
 # get data on this ticker
 ticker_data = yf.Ticker(ticker_symbol)
 
 # get the historical prices for this ticker
 start_date = st.date_input(
-    'Please select a start date')
+    'Please select start date for chart data:')
 
 end_date = st.date_input(
-    'Please select a end date')
+    'Please select end date for chart data:')
 
 ticker_df = ticker_data.history(
     period='1d', start=start_date, end=end_date)
 
 # create line charts
+st.write("""
+#### Closing price
+""")
 st.line_chart(ticker_df.Close)
+
+st.write("""
+#### Volume
+""")
 st.line_chart(ticker_df.Volume)
