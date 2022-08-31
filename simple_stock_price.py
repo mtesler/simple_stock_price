@@ -2,12 +2,10 @@ import yfinance as yf
 import streamlit as st
 import pandas as pd
 
-st.write("""
-# Simple Stock Price App
+st.markdown("<h1 style='text-align: center; color: black;'>Simple Stock Price App</h1>",
+            unsafe_allow_html=True)
 
-Shown are the stock closing price and volume of selected company!
-
-""")
+st.markdown("<h4 style='text-align: center; color: black;'>Shown are the stock closing price and volume of selected company!</h2>", unsafe_allow_html=True)
 
 # define the ticker symbol
 ticker_symbol = st.text_input(
