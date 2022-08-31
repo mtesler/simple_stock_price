@@ -16,10 +16,10 @@ ticker_data = yf.Ticker(ticker_symbol)
 
 # get the historical prices for this ticker
 start_date = st.date_input(
-    'Please select a start date')
+    'Please select start date for chart data:')
 
 end_date = st.date_input(
-    'Please select a end date')
+    'Please select end date for chart data:')
 
 ticker_df = ticker_data.history(
     period='1d', start=start_date, end=end_date)
